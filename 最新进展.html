@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenJT - 最新进展 </title>
+    <style>
+
+    body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            max-width: 900px;
+            margin: auto;
+        }
+
+       /* 页眉样式 */
+       header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+     /* 主体样式 */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+         
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+
+    /*产品卡片样式*/
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+/* 鼠标悬停效果*/
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+   /*图文框文本样式*/
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenJT-最新进展</h1>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>围绕JoTangLM的一系列辅助和垂直领域的应用研发进展</h2>
+            <p>公司团队在深度学习算法优化、自然语言处理及计算机视觉三大核心领域取得了突破性进展，不仅显著提升了AI模型的训练效率与准确性，更开创性地推进了跨模态智能交互技术的应用边界，为构建更为人性化、高效的人机协作平台奠定了坚实的基础。尤其值得一提的是，OpenJT自主研发的多模态融合框架，在国际顶级学术会议上荣获殊荣，标志着公司在推动人工智能科技进步的同时，正逐步成长为全球AI领域的关键参与者与创新引擎，其未来发展潜力不可限量。OpenJT正以迅猛的步伐迈向行业巅峰，持续引领AI技术研发新浪潮，赋能千行百业智能化转型。</p>
+        </section>
+
+    
+
+        <section id="products" class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="XLm6-fPwK5Q.jpg" alt="JoTang策划">
+                </div>
+                <div class="product-info">
+                    <h3>JoTang策划</h3>
+                    <p>企业级创新解决方案，利用JoTangLM生成创意概念、市场分析报告和产品策略，加速企业创新周期。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="学习.jpg" alt="JoTang学习通">
+                </div>
+                <div class="product-info">
+                    <h3>JoTang学习通</h3>
+                    <p>智能教育辅助平台，为学生提供个性化学习路径，生成定制化课程和练习，提升教育效果。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Law.png"alt="JoTang合法易">
+                </div>
+                <div class="product-info">
+                    <h3>JoTang合法易</h3>
+                    <p>法律文档自动生成与分析工具，辅助律师进行法律文书的撰写、案例检索和法律咨询等工作</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Muse.png" alt="JT Muse">
+                </div>
+                <div class="product-info">
+                    <h3>JT Muse</h3>
+                    <p> 快速生成与您提供的文本完全一致的图像，将自己的想法变成现实。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="secure.png" alt="JoTangSecureChat">
+                </div>
+                <div class="product-info">
+                    <h3>JTSecureChat</h3>
+                    <p>企业级安全沟通工具，结合JoTangLM的智能对话能力与高级加密技术，确保企业内部沟通的安全与效率。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Health.png" alt="JoTangHealth">
+                </div>
+                <div class="product-info">
+                    <h3>JoTangHealth</h3>
+                    <p>医疗健康助手，提供基于个人健康数据的健康建议、疾病风险评估和生活方式指导。</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+</body>
+</html>

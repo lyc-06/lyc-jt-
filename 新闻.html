@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenJT - 新闻与活动</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            max-width: 900px;
+            margin: auto;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+         /* 轮播图样式 */
+    .carousel {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .carousel-control.prev {
+      left: 20px;
+    }
+
+    .carousel-control.next {
+      right: 20px;
+    }
+
+        /* 新闻网格 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .news-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            /* 鼠标悬停时，Y轴移动 */
+            transition: transform 0.3s ease;
+        }
+        /* 鼠标悬停时，新闻内容显示，向上移动5px */
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+       
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1rem;
+        }
+        /*图标容器样式*/
+        .chart-container {
+            margin-top: 2rem;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenJT - 新闻与活动</h1>
+    </header>
+    <main>
+        <div class="carousel">
+            <img src="新闻2.png" alt="Image 1">
+            <img src="新闻3.png" alt="Image 2">
+            <img src="新闻1.png" alt="Image 3">
+            <img src="新闻4.png" alt="Image 4">
+            <div class="carousel-control prev">&lsaquo;</div>
+            <div class="carousel-control next">&rsaquo;</div>
+          </div>
+
+        <h2>最新动态</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="量子纠缠.png" alt="量子AI研究">
+                <div class="news-content">
+                    <h3>量子AI研究取得重大突破</h3>
+                    <p>OpenJT的研究团队在量子计算和AI结合领域取得了突破性进展，为未来AI发展开辟了新方向。</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="rjen1Ndh0WI.jpg" alt="战略合作">
+                <div class="news-content">
+                    <h3>与科技巨头达成战略合作</h3>
+                    <p>OpenJT与多家科技巨头达成战略合作，共同推动AI技术在各行业的应用与落地。</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="东北豹.png" alt="东北豹">
+                <div class="news-content">
+                    <h3>守护华南虎</h3>AI助力提高保护区管理与科研能力，开启物种保护新时代。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>用户增长趋势</h2>
+            <canvas id="userGrowthChart"></canvas>
+
+        <h2>用户年龄分布</h2>
+        <canvas id="ageDistributionChart"></canvas>
+        
+        <h2>用户地区分布</h2>
+        <canvas id="regionDistributionChart"></canvas>
+        </div>
+           
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+         // 轮播图
+      var carousel = document.querySelector('.carousel');
+      var images = carousel.getElementsByTagName('img');
+      var currentIndex = 0;
+      var prevBtn = carousel.querySelector('.carousel-control.prev');
+      var nextBtn = carousel.querySelector('.carousel-control.next');
+
+      function showImage(index) {
+        for (var i = 0; i < images.length; i++) {
+          images[i].style.display = 'none';
+        }
+        images[index].style.display = 'block';
+      }
+
+      function nextImage() {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+          currentIndex = 0;
+        }
+        showImage(currentIndex);
+      }
+
+      prevBtn.addEventListener('click', function() {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = images.length - 1;
+        }
+        showImage(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', function() {
+        nextImage();
+      });
+
+      setInterval(nextImage, 5000); // 每5秒自动切换下一张图片
+
+       // 用户增长图表
+        const ctx = document.getElementById('userGrowthChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018',"2019", '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: '用户数量（百万）',
+                    data: [5, 8, 18, 35, 79, 120, 180],
+                    borderColor: 'rgb(255, 182, 193)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '用户人数（百万）'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '年份'
+                            }
+                        }
+                    }
+                }
+            });
+    
+
+         // 用户年龄分布图表
+         const ageCtx = document.getElementById('ageDistributionChart').getContext('2d');
+            new Chart(ageCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['18-25', '26-35', '36-45', '46-55', '56+'],
+                    datasets: [{
+                        label: '用户人数（百万）',
+                        data: [10, 25, 30, 20, 15],
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '用户人数（百万）'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '年龄段'
+                            }
+                        }
+                    }
+                }
+            });
+    
+           // 用户地区分布图表
+        const regionCtx = document.getElementById('regionDistributionChart').getContext('2d');
+        new Chart(regionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['北美', '欧洲', '亚太', '拉丁美洲', '非洲'],
+                datasets: [{
+                    label: '用户人数（百万）',
+                    data: [30, 25, 40, 15, 10],
+                    backgroundColor: 'rgba(144, 238, 144, 0.5)', // 半透明的淡绿色
+borderColor: 'rgba(144, 238, 144, 1)',       // 不透明的淡绿色
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '用户人数（百万）'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: '地区'
+                        }
+                    }
+                }
+            }
+        });
+        </script>
+</body>
+</html>

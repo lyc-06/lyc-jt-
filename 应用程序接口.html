@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoTangLM - OpenJT的革命性AI语言模型</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f7f6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        /* API Overview （文本概述）*/
+        .api-overview {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .api-overview h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* Pricing （定价方案）*/
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: calc(30% - 40px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);/*鼠标悬停时，卡片放大*/
+        }
+        .pricing-card h3 {
+            color: #999898;
+        }
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        /*描述文本排布*/
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+
+         
+       /*固定文字容器 */
+       .content-box {
+    max-width: 1100px; 
+    margin: 20px auto; /* 上下留空，左右居中 */
+    padding: 20px; /* 内部填充 */
+    border: 1px solid#f4f7f6; /* 边框样式 */
+    border-radius: 8px; /* 圆角 */
+    background-color: #f4f7f6; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+.content-box h2 {
+    margin-bottom: 10px; /* 标题下方间距 */
+}
+
+.content-box p {
+    margin: 0; /* 段落间距 */
+}
+
+/* 功能卡片 */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: calc(100% - 40px);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        /*CTA按钮*/
+        .cta-button {
+            display: inline-block;
+            background-color: #c4c0c0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            }
+            .cta-button:hover {           
+                 background-color: #414447;
+        }
+        .cta-button1 {
+            display: inline-block;
+            background-color: #c4c0c0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            }
+            .cta-button1:hover {           
+                background-color: #414447;
+            }
+        .cta-button2 {
+            display: inline-block;
+            background-color: #c4c0c0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            }
+            .cta-button2:hover {           
+                 background-color: #414447;
+        }
+
+        .cta-button3 {
+            display: inline-block;
+            background-color: #c4c0c0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            }
+            .cta-button3:hover {           
+                 background-color: #414447;
+        }
+
+        .cta-button4 {
+            display: inline-block;
+            background-color: #c4c0c0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            }
+            .cta-button4:hover {           
+                 background-color: #414447;
+        }
+
+        /*合作伙伴*/
+        .partners {
+            text-align: center;
+        }
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .partner-logo {
+            margin: 20px;
+            max-width: 150px;
+            filter: whitesmoke(100%);
+        }
+        
+        
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>JoTangLM</h1>
+            <a href="#" class="cta-button1">立即使用</a>
+        </div>
+    </header>
+
+    <div class="content-box">
+        <h2>重新定义人机交互</h2>
+        <p>JoTangLM，OpenJT的革命性AI语言模型，重塑AI语言边界。集深度学习精华，跨领域知识融通无界。</p>
+    </div>
+
+    <section class="features container">
+        <div class="feature-card">
+            <a href="#" class="cta-button2">个人版</a>
+            <ul>
+                <li>定制智能伙伴：专为AI爱好者与日常用户设计，提供个性化、智能化的服务体验。</li>
+                <li>多功能应用：支持智能写作、学习辅助、语言翻译、知识问答等多种应用场景，满足个人多样化需求。</li>
+                <li>高效便捷：小巧轻便，易于操作，让每个人都能轻松上手，享受AI带来的便捷与乐趣。</li>
+                <li>个性化推荐：基于用户行为分析，智能推荐相关内容与资源，助力个人成长与创新。</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <a href="#" class="cta-button3">团队版</a>
+    <ul>
+                <li>智能协同：提供团队协作工具，支持多人同时编辑文档、管理任务、沟通交流。</li>
+                <li>智能整合：实时理解并整合团队成员意见，智能生成报告、方案与决策建议，提升决策效率。</li>
+                <li>跨地域协作：支持多语言、跨时区协作，打破地域限制，让全球团队无缝对接，共同完成任务。</li>
+                <li>项目管理：内置项目管理工具，支持任务分配、进度跟踪与成果展示，提升团队协作效率。</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <a href="#" class="cta-button4">企业版</a>
+            <ul>
+             <li>全方位解决方案：为企业提供全方位的信息处理与分析服务，助力企业精准决策与智能化转型。</li>
+                <li>深度理解：深入理解企业需求，智能生成市场分析报告、客户洞察报告与业务预测，为企业发展提供有力支持。</li>
+                <li>定制化开发：支持定制化开发与集成，无缝融入企业现有系统，提升整体运营效率与用户体验。</li>
+                <li>数据安全：采用先进的数据加密与隐私保护技术，确保企业数据安全与隐私保护。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="api-overview container">
+        <h2>平台概述</h2>
+        <p>JoTangLM API 为开发者提供了强大的自然语言处理能力。无论是构建聊天机器人、内容生成工具，还是智能分析系统，我们的API都能满足您的需求。</p>
+        <p>主要特点：</p>
+        <ul>
+            <li>简单易用的 RESTful API</li>
+            <li>支持多种编程语言</li>
+            <li>实时响应，低延迟</li>
+            <li>灵活的定价方案</li>
+            <li>详细的文档和示例代码</li>
+        </ul>
+    </section>
+
+    <section class="pricing container">
+        <div class="pricing-card">
+            <h3>个人版</h3>
+            <div class="price">¥99/月</div>
+            <ul class="feature-list">
+                <li>每月10万次API调用</li>
+                <li>基础自然语言处理功能</li>
+                <li>标准客户支持</li>
+            </ul>
+            <a href="#" class="cta-button">选择方案</a>
+        </div>
+        <div class="pricing-card">
+            <h3>团队版</h3>
+            <div class="price">¥499/月</div>
+            <ul class="feature-list">
+                <li>每月100万次API调用</li>
+                <li>高级NLP功能</li>
+                <li>优先客户支持</li>
+                <li>自定义模型训练</li>
+            </ul>
+            <a href="#" class="cta-button">选择方案</a>
+        </div>
+        <div class="pricing-card">
+            <h3>企业版</h3>
+            <div class="price">联系销售</div>
+            <ul class="feature-list">
+                <li>无限API调用</li>
+                <li>全套NLP功能</li>
+                <li>24/7专属支持</li>
+                <li>定制化解决方案</li>
+                <li>本地部署选项</li>
+            </ul>
+            <a href="#" class="cta-button">联系我们</a>
+        </div>
+    </section>
+
+    <section class="partners container">
+        <h2>合作伙伴</h2>
+        <div class="partner-logos">
+            <img src="微软.png" alt="Partner 1" class="partner-logo">
+            <img src="英伟达.png" alt="Partner 2" class="partner-logo">
+            <img src="splunk.png" alt="Partner 3" class="partner-logo">
+            <img src="电子科技大学.png" alt="Partner 4" class="partner-logo">
+            <img src="国金证券.png" alt="Partner 5" class="partner-logo">
+    </section>
+
+    <script>
+         document.querySelector('.cta-button1').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('感谢您的信任！JoTangLM即将为您启动。');
+        });
+
+        document.querySelector('.cta-button2').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('感谢您的选择！更多个人版功能即将为您呈现。');
+        });
+
+        document.querySelector('.cta-button3').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('感谢您的选择！更多团队版功能即将为您呈现。');
+        });
+
+        document.querySelector('.cta-button4').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('感谢您的选择！更多企业版功能即将为您呈现。');
+        });
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('感谢您的关注！我们的销售团队会尽快与您联系。');
+            });
+        });
+    </script>
+</body>
+</html>

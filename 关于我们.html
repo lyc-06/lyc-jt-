@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenJT - 关于我们</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        /* 页眉样式 */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* 主内容区样式 */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        /* 关于部分样式 */
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        
+          /* 价值观容器样式 */
+          .values-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        /* 价值观项文本样式 */
+        .value-item {
+            flex-basis: calc(45% - 2rem);
+            text-align: center;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        /* 网格布局样式 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        /* 项目样式（优势） */
+        .about-item {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        /* 项目 hover 样式 *//*鼠标悬停样式*/
+        .about-item:hover {
+            transform: translateY(-5px);
+        }
+        /* 优势图片样式 */
+        .about-item img {
+            width: 180px;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+
+            /*时间线样式*/
+            .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.timeline-content {
+    background: white;
+    border-radius: 6px;
+    padding: 10px;
+    width: 45%; /* 控制内容块宽度 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin: auto;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenJT - 关于我们</h1>
+    </header>
+    <main>
+        <section class="about-section">
+            <h2>我们的使命</h2>
+            <p>OpenJT致力于推动人工智能技术的发展，为全球用户提供创新的AI解决方案，让AI惠及每个人的生活和工作。</p>
+        </section>
+
+        <section class="about-section">
+            <h2>我们的愿景</h2>
+            <p>成为全球领先的AI技术公司，引领人工智能的未来发展方向，为人类社会的进步做出重大贡献。</p>
+        </section>
+
+        <section class="about-section">
+            <h2>我们的价值观</h2>
+            <div class="values-container">
+                <div class="value-item">
+                    <h3>创新</h3>
+                    <p>不断探索AI的前沿，追求突破性的技术创新。</p>
+                </div>
+                <div class="value-item">
+                    <h3>开放</h3>
+                    <p>拥抱开源文化，与全球开发者共同推动AI发展。</p>
+                </div>
+                <div class="value-item">
+                    <h3>责任</h3>
+                    <p>坚持AI伦理，确保技术发展造福人类社会。</p>
+                </div>
+                <div class="value-item">
+                    <h3>协作</h3>
+                    <p>重视团队合作，鼓励跨学科交流与合作。</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about-section">
+            <h2>工作章程</h2>
+            <p>OpenJT秉持开放、透明的工作文化，鼓励员工勇于创新、敢于尝试。我们重视团队协作，提倡跨部门合作，以实现共同的目标。每位员工都有机会参与重要决策，共同塑造公司的未来。</p>
+        </section>
+
+        <section class="about-section">
+            <h2>我们的优势</h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <img src="MxVkWPiJALs.jpg" alt="前沿技术">
+                    <h3>前沿技术</h3>
+                    <p>持续投入研发，保持技术领先优势</p>
+                </div>
+                <div class="about-item">
+                    <img src="w_zE6qlkQKA.jpg" alt="全球化团队">
+                    <h3>全球化团队</h3>
+                    <p>汇聚全球顶尖AI人才，促进多元化创新</p>
+                </div>
+                <div class="about-item">
+                    <img src="uxAkoaGz6bw.jpg" alt="行业应用">
+                    <h3>行业应用</h3>
+                    <p>深入各行各业，提供定制化AI解决方案</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>回望来时路</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2018年 - 公司成立</h3>
+                    <p>OpenJT在成都成立，专注于AI技术研发。</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2020年 - 完成A轮融资</h3>
+                    <p>引入外部资本注入活力，也标志着市场对公司发展前景的认可。</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2022年 - JoTangLM发布</h3>
+                    <p>构建更为智能、流畅的人机交互体验，被誉为“划时代”的语言模型</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2024年 - 国际拓展</h3>
+                    <p>公司业务版图不断扩大，合作客户遍布世界各地。</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    
+</body>
+</html>
+

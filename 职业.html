@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenJT - 职业机会</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        /* 企业文化 */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .culture-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .culture-item:hover {
+            transform: translateY(-5px);
+        }
+        /* 特色职位 */
+        .job-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .job-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .job-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* 员工福利 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .benefit-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        /* 按钮样式 */
+        .cta-button {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #333;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenJT - 职业机会</h1>
+    </header>
+    <main>
+        <section class="section">
+            <h2>我们的文化</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <h3>创新精神</h3>
+                    <p>鼓励员工大胆尝试，推动AI技术的突破性发展。</p>
+                </div>
+                <div class="culture-item">
+                    <h3>开放协作</h3>
+                    <p>促进团队合作，建立开放、包容的工作环境。</p>
+                </div>
+                <div class="culture-item">
+                    <h3>持续学习</h3>
+                    <p>提供丰富的学习资源，支持员工职业发展。</p>
+                </div>
+                <div class="culture-item">
+                    <h3>工作生活平衡</h3>
+                    <p>重视员工身心健康，提倡高效工作与生活的平衡。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>特色职位</h2>
+            <ul class="job-list">
+                <li class="job-item">
+                    <h3>AI研究科学家</h3>
+                    <p>负责前沿AI算法研究，推动深度学习和机器学习技术的创新。</p>
+                    <a href="#" class="cta-button">查看详情</a>
+                </li>
+                <li class="job-item">
+                    <h3>高级软件工程师</h3>
+                    <p>设计和开发高性能、可扩展的AI应用系统。</p>
+                    <a href="#" class="cta-button">查看详情</a>
+                </li>
+                <li class="job-item">
+                    <h3>产品经理</h3>
+                    <p>负责AI产品的规划、设计和生命周期管理。</p>
+                    <a href="#" class="cta-button">查看详情</a>
+                </li>
+                <li class="job-item">
+                    <h3>数据分析师</h3>
+                    <p>运用统计和机器学习方法，从大规模数据中提取有价值的洞察。</p>
+                    <a href="#" class="cta-button">查看详情</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>员工福利</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>健康保险</h3>
+                    <p>全面的医疗、牙科和视力保险</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>灵活工作</h3>
+                    <p>弹性工作时间和远程工作选项</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>职业发展</h3>
+                    <p>个性化的职业规划和培训机会</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>股票期权</h3>
+                    <p>有机会成为公司的股东</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>带薪休假</h3>
+                    <p>充足的带薪假期和病假</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>健身补贴</h3>
+                    <p>健身房会员费报销</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>加入我们</h2>
+            <p>我们正在寻找激情四射、才华横溢的人才加入我们的团队。如果你对AI充满热情，渴望在这个快速发展的领域做出贡献，我们期待与你合作！</p>
+            <a href="#" class="cta-button">查看所有职位</a>
+        </section>
+    </main>
+
+    <script>
+     // 为职位列表添加简单的交互效果
+     const jobItems = document.querySelectorAll('.job-item');
+        jobItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.backgroundColor = '#f0f0f0';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.backgroundColor = '#f9f9f9';
+            });
+        });   
+
+        // 为CTA按钮添加点击事件
+    document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('期待您的加入！更多信息请联系HR。');
+        });
+    });
+</script>
+</body>
+</html>
